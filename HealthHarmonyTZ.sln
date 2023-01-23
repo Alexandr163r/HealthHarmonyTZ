@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHarmony.WebApi", "src\HealthHarmony.WebApi\HealthHarmony.WebApi.csproj", "{7B891E4E-1D0A-4055-A39D-C4A931F9C2DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHarmony.WPF", "src\HealthHarmony.WPF\HealthHarmony.WPF.csproj", "{959F7451-A1AD-4BE9-9A53-4DB71EBC1049}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHarmony.DAL", "src\HealthHarmony.DAL\HealthHarmony.DAL.csproj", "{27DCAE13-D53A-43AE-BA02-C238E28268DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHarmony.BL", "src\HealthHarmony.BL\HealthHarmony.BL.csproj", "{2CC9FACC-9241-4A18-BFC4-56C9C37F0CB3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHarmony.Domain", "src\HealthHarmony.Domain\HealthHarmony.Domain.csproj", "{C8400D7D-EDB5-4578-B494-42077E5EF09B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthHarmony.Tests", "HealthHarmony.Tests\HealthHarmony.Tests.csproj", "{7EC14C14-EBCF-4A50-A182-498EA0FBAE3A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B891E4E-1D0A-4055-A39D-C4A931F9C2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B891E4E-1D0A-4055-A39D-C4A931F9C2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B891E4E-1D0A-4055-A39D-C4A931F9C2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B891E4E-1D0A-4055-A39D-C4A931F9C2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{959F7451-A1AD-4BE9-9A53-4DB71EBC1049}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{959F7451-A1AD-4BE9-9A53-4DB71EBC1049}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{959F7451-A1AD-4BE9-9A53-4DB71EBC1049}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{959F7451-A1AD-4BE9-9A53-4DB71EBC1049}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27DCAE13-D53A-43AE-BA02-C238E28268DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27DCAE13-D53A-43AE-BA02-C238E28268DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27DCAE13-D53A-43AE-BA02-C238E28268DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27DCAE13-D53A-43AE-BA02-C238E28268DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC9FACC-9241-4A18-BFC4-56C9C37F0CB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC9FACC-9241-4A18-BFC4-56C9C37F0CB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC9FACC-9241-4A18-BFC4-56C9C37F0CB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC9FACC-9241-4A18-BFC4-56C9C37F0CB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8400D7D-EDB5-4578-B494-42077E5EF09B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8400D7D-EDB5-4578-B494-42077E5EF09B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8400D7D-EDB5-4578-B494-42077E5EF09B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8400D7D-EDB5-4578-B494-42077E5EF09B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EC14C14-EBCF-4A50-A182-498EA0FBAE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EC14C14-EBCF-4A50-A182-498EA0FBAE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EC14C14-EBCF-4A50-A182-498EA0FBAE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EC14C14-EBCF-4A50-A182-498EA0FBAE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
