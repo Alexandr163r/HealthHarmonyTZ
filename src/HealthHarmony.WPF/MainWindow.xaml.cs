@@ -101,7 +101,7 @@ namespace HealthHarmony.WPF
                     }
                     else
                     {
-                        MessageBox.Show("Произошла ошибка при обновлении", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        MessageBox.Show("Произошла ошибка при обновлении, для изменения записи нажмите кнопку 'Редактировать' ", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }
