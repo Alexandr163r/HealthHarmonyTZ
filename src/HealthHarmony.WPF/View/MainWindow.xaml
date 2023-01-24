@@ -1,0 +1,66 @@
+﻿<Window x:Class="HealthHarmony.WPF.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel1="clr-namespace:HealthHarmony.WPF.ViewModels"
+        mc:Ignorable="d"
+        Background="Azure"
+        Title="Health Harmony" Height="800" Width="1200">
+    <Window.Resources>
+        <viewmodel1:RecordViewModel x:Key="ViewModel"/>
+    </Window.Resources>
+    <Grid Background="Azure" Margin="20,20,20,8" DataContext="{Binding Source={StaticResource ViewModel}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="653*"/>
+            <RowDefinition Height="103*"/>
+        </Grid.RowDefinitions>
+        <Button Content="Добавить запись" HorizontalAlignment="Left" Margin="404,115,0,487" Width="112" Command="{Binding AddRecordCommand}"></Button>
+        <Button Grid.Row="0" Content="Обновить запись"  HorizontalAlignment="Left" Margin="533,115,0,487" Width="112" 
+                ToolTipService.ShowOnDisabled="True" ToolTip="Please Select Record to be Update" ToolTipService.ShowDuration="3000"
+                Command="{Binding UpdateRecordCommand}"/>
+        <Button Content="Показать записи" Margin="10,10,892,598" Command="{Binding ShowRecordCommand}"/>
+
+
+        <DataGrid x:Name="RecordDataGrid" ColumnWidth="*" AutoGenerateColumns="False"
+                  ItemsSource="{Binding recordModels}" CanUserAddRows="False" Margin="0,200,0,33" 
+                  SelectedItem="{Binding selectedRecordModel}" 
+                  FontSize="14" Grid.RowSpan="2" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header ="Название" IsReadOnly ="True"  MaxWidth="250" Binding="{Binding Path =Title}"/>
+                <DataGridTextColumn Header ="Текст" IsReadOnly="True" MaxWidth="250" Binding="{Binding Path =Title}"/>
+                <DataGridTextColumn Header ="Дата создания" IsReadOnly="True" Binding="{Binding Path = DateOfCreation, StringFormat=\{0:dd.MM.yy HH:mm\}}"/>
+                <DataGridTextColumn Header ="Дата модификации" IsReadOnly="True" Binding="{Binding Path =DateOfModification, StringFormat=\{0:dd.MM.yy HH:mm\}}"/>
+                <DataGridTextColumn Header ="Ид" IsReadOnly="True" Binding ="{Binding Path =Id}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Удалить" 
+                             DataContext="{Binding Source={StaticResource ViewModel}}" Command="{Binding DeleteRecordCommand}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Label Grid.Row="0" Content="Ид :" HorizontalAlignment="Left" Height="42" Margin="10,72,0,0" VerticalAlignment="Top" Width="127" FontSize="14"/>
+        <Label Grid.Row="0" Content="Дата создания :" HorizontalAlignment="Left" Height="27" Margin="10,107,0,0" VerticalAlignment="Top" Width="127" FontSize="14"/>
+        <Label Grid.Row="0" Content="Название :" HorizontalAlignment="Left"  Height="28" Margin="297,27,0,0" VerticalAlignment="Top" Width="82" RenderTransformOrigin="0.495,0.539" FontSize="14"/>
+        <Label Grid.Row="0" Content="Дата редактирования :" HorizontalAlignment="Left" Height="37" Margin="10,141,0,0" VerticalAlignment="Top" Width="158" RenderTransformOrigin="0.589,0.464" FontSize="14"/>
+        <Label Grid.Row="0" Content="Текст :" HorizontalAlignment="Left" Height="27" Margin="659,26,0,0" VerticalAlignment="Top" Width="49" FontSize="14" RenderTransformOrigin="0.408,-0.332"/>
+        <TextBox Grid.Row="0" Text="{Binding selectedRecordModel.Id, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 HorizontalAlignment="Left" Height="21" Margin="72,77,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="234"/>
+        <TextBox Grid.Row="0"
+                 Text="{Binding selectedRecordModel.DateOfCreation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=\{0:dd.MM.yy HH:mm\}}" 
+                 HorizontalAlignment="Left" Height="21" Margin="172,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="134"/>
+        <TextBox Grid.Row="0" Text="{Binding selectedRecordModel.Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 HorizontalAlignment="Left" Height="66" AcceptsReturn="True" Margin="395,22,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="259" RenderTransformOrigin="0.456,-0.075"/>
+        <TextBox Grid.Row="0"
+                 Text="{Binding selectedRecordModel.DateOfModification, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=\{0:dd.MM.yy HH:mm\}}" 
+                 HorizontalAlignment="Left" Height="21" Margin="173,145,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.833,0.387"/>
+        <TextBox Grid.Row="0" Text="{Binding selectedRecordModel.Text, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                 HorizontalAlignment="Left" AcceptsReturn="True" Height="145" Margin="713,26,0,0"  VerticalAlignment="Top" Width="387"
+                 FontStretch="Normal"/>
+    </Grid>
+
+</Window>
